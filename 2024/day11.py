@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/11
+
 from typing import List
 
 data1 = [0, 1, 10, 99, 999]

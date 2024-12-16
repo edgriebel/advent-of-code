@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/2
+
 ex_data = """
 7 6 4 2 1
 1 2 7 8 9
