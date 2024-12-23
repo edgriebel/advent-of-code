@@ -1,4 +1,5 @@
 # https://adventofcode.com/2024/day/2
+from aoc_utils import get_data
 
 ex_data = """
 7 6 4 2 1
@@ -39,14 +40,14 @@ assert retvals == ex_res
 
 print(f"Safe: {sum([1 if safe(rec) else 0 for rec in ex_data])}")
 
-with open("day2.data") as f:
-    data = f.readlines()
-data = [l.strip().split(" ") for l in data]
+data = get_data("02", lambda x: x.split(" "))
 
 print(data[:5], len(data))
 
 
-print(f"Safe: {sum([1 if safe(rec) else 0 for rec in data])}")
+ans = sum([1 if safe(rec) else 0 for rec in data])
+print(f"Safe: {ans}")
+assert 220 == ans
 
 ##########
 # Part 2 #

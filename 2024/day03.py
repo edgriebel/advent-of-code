@@ -1,6 +1,7 @@
 # https://adventofcode.com/2024/day/3
 import re
 from typing import List
+from aoc_utils import get_data
 
 data = "mul(123,456)"
 data = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
@@ -39,8 +40,7 @@ vals = mul_pat.findall(data)
 # print(vals)
 assert ans == (_v := getvals(vals)), f"{ans} != {_v}"
 
-with open("day03.data") as f:
-    data = [l.strip() for l in f.readlines()]
+data = get_data("03")
 
 total = 0
 for l in data:
@@ -59,3 +59,5 @@ assert test_tot == test_ans, f"{test_tot=} != {test_ans=}"
 
 pt2_tot = getvals(mul_pat.findall(" ".join(data)), True, False)
 print(pt2_tot)
+
+assert pt2_tot == 84893551

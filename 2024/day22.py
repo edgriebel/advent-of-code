@@ -1,4 +1,7 @@
 # https://adventofcode.com/2024/day/22
+from typing import Any, Callable, List
+
+from aoc_utils import get_data
 
 data_simple = {
     "start": 123,
@@ -101,12 +104,11 @@ v = do_rounds(1, 2000)
 assert (g := 8685429) == v, f"{g=} != {v=}"
 print("TESTS PASS!!")
 
-with open("day22.data") as f:
-    data = [int(l.strip()) for l in f.readlines()]
+data = get_data(22, lambda x: int(x))
 
 values = [0] * len(data)
 for i, secret in enumerate(data):
-    if i > 0 and not i % 100:
+    if i > 0 and not i % 250:
         print(f"{i:4} of {len(data)}")
     values[i] = do_rounds(secret, 2000)
 
