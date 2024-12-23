@@ -1,8 +1,10 @@
 # https://adventofcode.com/2024/day/1
 import re
+from aoc_utils import get_data
 
-with open('day1_input.txt') as f:
-    data = f.readlines()
+data = get_data("01")
+# with open('day1_input.txt') as f:
+# data = f.readlines()
 test_data = """
 3   4
 4   3
@@ -30,6 +32,11 @@ for i in range(len(a)):
     sums += abs(a[i] - b[i])
 
 print(f"Part 1: {sums}")
+assert 1530215 == sums
+
+########
+# Part 2
+########
 
 # figure similarity score
 
@@ -44,3 +51,4 @@ for v in a:
     simscore += v * counts[v]
 
 print(f"Part 2: {simscore}")
+assert 26800609 == simscore
